@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container login_form">
+      <div class="wrapper" >
+         <div class="title">
+            Login Form
+         </div>
+         <form action="login" method="post">
+            {% csrf_token %}
+            <div class="field">
+               <input name="username" type="text" required>
+               <label>Username</label>
+            </div>
+            <div class="field">
+               <input name="password" type="password" required>
+               <label>Password</label>
+            </div>
+            <div class="field">
+               <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+               Not a member? <a href="{% url 'credentials:register' %}">Register now</a>
+            </div>
+            <div class="field text-center">
+               {% for login_msg in messages%}
+                  <div class="alert alert-success text-center" role="alert">{{login_msg}}</div>
+               {% endfor %}
+            </div>
+         </form>
+      </div>
+</div>
+{% endblock %}

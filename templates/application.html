@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<div class="hero overlay">
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <!--                        <img src="{% static 'https://image.ibb.co/n7oTvU/logo_white.png' %}" alt=""/>-->
+
+                <h3>Welcome</h3>
+
+                <p>You are 30 seconds away from earning your own money!</p>
+                <a href="{% url 'credentials:logout' %}" class="btn btn-outline-white-reverse me-4">Logout</a><br/>
+            </div>
+            <div class="col-md-9 register-right" style="height:78%">
+                <!--                        <ul class="nav nav-tabs nav-justified" id="myTab">-->
+                <!--                            <li class="nav-item">-->
+                <!--                                    <a href="contact.html" class="btn me-2">Contact us</a>-->
+                <!--&lt;!&ndash;                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>&ndash;&gt;-->
+                <!--                            </li>-->
+                <!--                        </ul>-->
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Application Form</h3>
+                        <form action="application" method="post">
+                            {% csrf_token %}
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name *" name="name"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder="DOB *" value="" name="dob"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value=""/>
+                                    </div>
+                                    <div class="form-group">
+                                       <select class="form-control" name="types" id="">
+                                            <option class="hidden" selected disabled>Please select your Account type *</option>
+                                            {% for type in types %}
+                                                <option value="{{type.Type_name}}">{{type.Type_name}}</option>
+                                            {% endfor%}
+                                        </select>
+                                    </div>
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="maxl" style="padding: 20px;">-->
+<!--                                            <label class="radio inline">-->
+<!--                                                <input type="radio" name="gender" value="male">-->
+<!--                                                <span> Male&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
+<!--                                            </label>-->
+<!--                                            <label class="radio inline">-->
+<!--                                                <input type="radio" name="gender" value="female" checked>-->
+<!--                                                <span>Female&nbsp;&nbsp;&nbsp;&nbsp; </span>-->
+<!--                                            </label>-->
+<!--                                            <label class="radio inline">-->
+<!--                                                <input type="radio" name="gender" value="transgender">-->
+<!--                                                <span>Transgender </span>-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email"  class="form-control" placeholder="Your Email *" value="" name="email"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" minlength="2" maxlength="2" name="age" class="form-control" placeholder="Your Age *" value=""/>
+                                    </div>
+                                   <div class="form-group">
+                                        <select class="form-control" name="district" id="select1">
+                                            <option class="hidden" selected disabled>Please select your District *</option>
+                                            {% for dist in district %}
+                                                <option value="{{dist.id}}">{{dist.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                   </div>
+                                    <div class="form-group">
+                                            <select class="form-control" name="branch" id="selectBranch" disabled>
+                                                <option class="hidden" selected disabled>Please select your Branch *</option>
+                                                {% for branch in branches %}
+                                                    <option value="{{ branch.id }}">{{ branch.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                    </div>
+
+<!--                                    <div class="form-group">-->
+<!--                                        <select class="form-control" name="account">-->
+<!--                                            <option class="hidden" selected disabled>Please select your Account type *-->
+<!--                                            </option>-->
+<!--                                            <option>Kozhikode</option>-->
+<!--                                            <option>Kannur</option>-->
+<!--                                            <option>Thiruvanathapuram</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+                                    <div class="form-group">
+                                        <select class="form-control" name="document">
+                                            <option class="hidden" selected disabled>Materials provided *</option>
+                                            {% for doc in document %}
+                                                <option value="{{doc.name}}">{{doc.name}}</option>
+                                                {% endfor%}
+                                        </select>
+                                    </div>
+                                    <input type="submit" class="btnRegister" value="Submit"/>
+                                </div>
+                                <div class="container" style="padding-top:20px">
+                                <div class="row">
+                                <div class="col">
+                                <div class="field text-center">
+                                    {% for applied in messages%}
+                                    <div class="alert alert-danger text-center" role="alert" style=" height:50px;">{{applied}}</div>
+                                    {% endfor %}
+                                </div>
+                                </div></div></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Initialize Select2 for the district dropdown
+        $('#selectDistrict').select2();
+
+        // Add change event listener for the district dropdown
+        $('#selectDistrict').change(function () {
+            var districtId = $(this).val();
+            if (districtId) {
+                $.ajax({
+                    url: '/get-branches/' + districtId + '/',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        // Clear and append options to the branch dropdown
+                        $('#selectBranch').empty().append('<option class="hidden" selected disabled>Please select your Branch *</option>');
+                        $.each(data, function (key, value) {
+                            $('#selectBranch').append('<option value="' + value.id + '">' + value.name + '</option>');
+                        });
+
+                        // Remove the disabled attribute from the branch dropdown
+                        $('#selectBranch').prop('disabled', false);
+
+                        // Trigger the change event to update Select2 for the branch dropdown
+                        $('#selectBranch').trigger('change');
+                    },
+                    error: function () {
+                        alert('Failed to fetch branches.');
+                    }
+                });
+            } else {
+                // If no district selected, reset and disable the branch dropdown
+                $('#selectBranch').empty().append('<option class="hidden" selected disabled>Please select your Branch *</option>');
+                $('#selectBranch').prop('disabled', true);
+            }
+        });
+
+        // Initialize Select2 for the branch dropdown
+        $('#selectBranch').select2();
+    });
+</script>
+
+
+
+<!--<script src="{% static 'js/main.js' %}"></script>-->
+{% endblock %}
