@@ -1,0 +1,5 @@
+bankapp/__pycache__/*
+bankapp/migrations/__pycache__/*
+bankproject/__pycache__/*
+credentials/__pycache__/*.pyc
+venv

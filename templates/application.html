@@ -49,22 +49,7 @@
                                             {% endfor%}
                                         </select>
                                     </div>
-<!--                                    <div class="form-group">-->
-<!--                                        <div class="maxl" style="padding: 20px;">-->
-<!--                                            <label class="radio inline">-->
-<!--                                                <input type="radio" name="gender" value="male">-->
-<!--                                                <span> Male&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
-<!--                                            </label>-->
-<!--                                            <label class="radio inline">-->
-<!--                                                <input type="radio" name="gender" value="female" checked>-->
-<!--                                                <span>Female&nbsp;&nbsp;&nbsp;&nbsp; </span>-->
-<!--                                            </label>-->
-<!--                                            <label class="radio inline">-->
-<!--                                                <input type="radio" name="gender" value="transgender">-->
-<!--                                                <span>Transgender </span>-->
-<!--                                            </label>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -73,35 +58,26 @@
                                     <div class="form-group">
                                         <input type="number" minlength="2" maxlength="2" name="age" class="form-control" placeholder="Your Age *" value=""/>
                                     </div>
-                                   <div class="form-group">
-                                        <select class="form-control" name="district" id="select1">
+                                    <div class="form-group" style="margin-bottom: 5px;">
+                                        <select class="form-control" name="district" id="selectDistrict">
                                             <option class="hidden" selected disabled>Please select your District *</option>
                                             {% for dist in district %}
                                                 <option value="{{dist.id}}">{{dist.name}}</option>
                                             {% endfor %}
                                         </select>
-                                   </div>
-                                    <div class="form-group">
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 5px;">
                                             <select class="form-control" name="branch" id="selectBranch" disabled>
-                                                <option class="hidden" selected disabled>Please select your Branch *</option>
+                                                <option class="form-control hidden" selected disabled>Please select your Branch *</option>
                                                 {% for branch in branches %}
                                                     <option value="{{ branch.id }}">{{ branch.name }}</option>
                                                 {% endfor %}
                                             </select>
                                     </div>
 
-<!--                                    <div class="form-group">-->
-<!--                                        <select class="form-control" name="account">-->
-<!--                                            <option class="hidden" selected disabled>Please select your Account type *-->
-<!--                                            </option>-->
-<!--                                            <option>Kozhikode</option>-->
-<!--                                            <option>Kannur</option>-->
-<!--                                            <option>Thiruvanathapuram</option>-->
-<!--                                        </select>-->
-<!--                                    </div>-->
                                     <div class="form-group">
                                         <select class="form-control" name="document">
-                                            <option class="hidden" selected disabled>Materials provided *</option>
+                                            <option class="form-control hidden" selected disabled>Materials provided *</option>
                                             {% for doc in document %}
                                                 <option value="{{doc.name}}">{{doc.name}}</option>
                                                 {% endfor%}
@@ -137,7 +113,7 @@
             var districtId = $(this).val();
             if (districtId) {
                 $.ajax({
-                    url: '/get-branches/' + districtId + '/',
+                    url: '/get-branches/' + districtId,
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {

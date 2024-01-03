@@ -58,13 +58,7 @@ class Application(models.Model):
     branch = models.ForeignKey('Branches', on_delete=models.CASCADE)
     account = models.ForeignKey('AccountType', on_delete=models.CASCADE)
     document = models.ForeignKey('Document', on_delete=models.CASCADE, default="material")
-    # GENDER_CHOICES = [
-    #     ('M', 'Male'),
-    #     ('F', 'Female'),
-    #     ('T', 'Transgenders'),
-    # ]
-    # gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    # transactionMode = models.CharField(max_length=100)
+    
 
     class Meta:
         ordering = ('name',)

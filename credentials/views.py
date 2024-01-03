@@ -54,6 +54,7 @@ def application(request):
 
         # Fetch branches based on the selected district
         branches = Branches.objects.filter(district=district)
+        branch_instance = branches.first()
 
         accType = request.POST.get('types')
         account = AccountType.objects.get(Type_name=accType)
@@ -69,7 +70,7 @@ def application(request):
             messages.warning(request, "Phone number already exists!!")
             return redirect('credentials:application')
         else:
-            application = Application(name=name, dob=dob, age=age, email=email, phone=phone, district=district, branch=branches, account=account, document=document)
+            application = Application(name=name, dob=dob, age=age, email=email, phone=phone, district=district, branch=branch_instance, account=account, document=document)
             application.save()
             # print(district_drop)
             return render(request, 'applied.html')
