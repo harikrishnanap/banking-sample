@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<div class="hero overlay">
+		<img src="{% static 'images/blob.svg' %}" alt="" class="img-fluid blob">
+		<div class="container">
+			<div class="row align-items-center justify-content-between pt-5">
+				<div class="col-lg-6 text-center text-lg-start pe-lg-5">
+					<h1 class="heading text-white mb-3" data-aos="fade-up">Together we make it happen.</h1>
+					<p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">Smart banking for financial freedom. We Built This Bank For You; today, tomorrow, together.</p>
+					<div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
+						{% if user.is_authenticated %}
+							<a href="{% url 'credentials:application' %}" class="btn btn-outline-white-reverse me-4">Apply here</a>
+							<a href="{% url 'credentials:logout' %}" class="btn btn-outline-white-reverse me-4">Logout</a>
+						{% else %}
+							<a href="{% url 'credentials:login' %}" class="btn btn-outline-white-reverse me-4">Login</a>
+							<a href="{% url 'credentials:register' %}" class="btn btn-outline-white-reverse me-4">Register here</a>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+					<div class="img-wrap">
+						<img src="{% static 'images/img-1.jpg' %}" alt="Image" class="img-fluid rounded">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section sec-services">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
+				<h2 class="heading text-primary">Our Services</h2>
+				<p>In a fast-moving and increasingly complex global economy, our success depends on how faithfully we adhere to our core principles: delivering exceptional client service; acting with integrity and responsibility; and supporting the growth of our employees.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up">
+
+				<div class="service text-center">
+					<span class="fa-solid fa-sack-dollar fa-lg" style="color: #1357cd;"></span>
+					<div>
+						<h3>Faster payments</h3>
+						<p class="mb-4">We offers the fastest and more secure money transfer of all banks.</p>
+						<p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+				<div class="service text-center">
+					<span class="fa-brands fa-rocketchat fa-lg" style="color: #1357cd;"></span>
+					<div>
+						<h3>Grow your business</h3>
+						<p class="mb-4">Are you still waiting to start your dream business to start? Then don't be.</p>
+						<p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+				<div class="service text-center">
+					<span class="fa-solid fa-fingerprint fa-lg" style="color: #1357cd;"></span>
+					<div>
+						<h3>Investments</h3>
+						<p class="mb-4">Invest your money on us, and grow with us, we cares about you.</p>
+						<p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+				<div class="service text-center">
+					<span class="fa-solid fa-gear fa-lg" style="color: #1357cd;"></span>
+					<div>
+						<h3>Payment & Cards</h3>
+						<p class="mb-4">Think Big, Think Different, secure your payments with us. </p>
+						<p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+				<div class="service text-center">
+					<span class="fa-solid fa-chart-line fa-lg" style="color: #1357cd;"></span>
+					<div>
+						<h3>Strategic Finance</h3>
+						<p class="mb-4">The application is developed using the latest cutting edge technology and tools. </p>
+						<p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+				<div class="service text-center">
+					<span class="fa-solid fa-layer-group " style="color: #1357cd;"></span>
+					<div>
+						<h3>Digital Currency</h3>
+						<p class="mb-4">Customers can transfer the tokens to each other through VPA, Mobile No. and QR Code. </p>
+						<p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="section sec-cta overlay" style="background-image: url({% static 'images/img-3.jpg' %})">
+	<div class="container">
+		<div class="row justify-content-between align-items-center">
+			<div class="col-lg-5" data-aos="fade-up" data-aos-delay="0">
+				<h2 class="heading">Wanna Talk To Us?</h2>
+				<p>Find out how to contact us and how to get here. </p>
+			</div>
+			<div class="col-lg-5 text-end" data-aos="fade-up" data-aos-delay="100">
+				<a href="{% url 'bankapp:contact' %}" class="btn btn-outline-white-reverse">Contact us</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="section sec-news">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-lg-7">
+				<h2 class="heading text-primary">Latest News</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card post-entry">
+					<a href="single.html"><img src="{% static 'images/img-1.jpg' %}" class="card-img-top" alt="Image"></a>
+					<div class="card-body">
+						<div><span class="text-uppercase font-weight-bold date">Oct 17, 2023</span></div>
+						<h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+						<p>The liquidity state-dependence of monetary policy transmission Staff working papers set out research in progress </p>
+						<p class="mt-5 mb-0"><a href="#">Read more</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="card post-entry">
+					<a href="single.html"><img src="{% static 'images/img-2.jpg' %}" class="card-img-top" alt="Image"></a>
+					<div class="card-body">
+						<div><span class="text-uppercase font-weight-bold date">Oct 17, 2023</span></div>
+						<h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+						<p>An evaluation of the Bank of England’s ILTR operations: comparing the product‑mix auction to alternatives. </p>
+						<p class="mt-5 mb-0"><a href="#">Read more</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="card post-entry">
+					<a href="single.html"><img src="{% static 'images/img-3.jpg' %}" class="card-img-top" alt="Image"></a>
+					<div class="card-body">
+						<div><span class="text-uppercase font-weight-bold date">Oct 17, 2023</span></div>
+						<h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+						<p>Financial Stability in Focus: The FPC’s approach to assessing risks in market-based finance. </p>
+						<p class="mt-5 mb-0"><a href="single.html">Read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
