@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="hero overlay">
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <!--                        <img src="{% static 'https://image.ibb.co/n7oTvU/logo_white.png' %}" alt=""/>-->
+                <h3>Welcome</h3>
+                <p>You are 30 seconds away from earning your own money!</p>
+                <p>Start your financial independent journey with us</p>
+<!--                <input type="submit" name="" value="Login"/><br/>-->
+            </div>
+            <div class="col-md-9 register-right" style="height:65%">
+                <form action="application" method="post">
+                    {% csrf_token %}
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Apply Here</h3>
+
+                          <div class="row register-form">
+                              <div class="col-md">
+                                    <div class="form-group">
+                                        <h6 class="font-weight-bold" style="color:#848D92; !important">Your Application is Accepted. Stay in Touch</h6>
+                                        <div class="align-right">
+                                            <P class="font-weight-bold" style="color:#848D92; !important"> Click here to return to <a class="btn btnRegister" style="color:#051045; !important" href="{% url 'bankapp:index' %}"> Home page</a></P>
+                                        </div>
+                                     </div>
+                              </div>
+<!--                                <div class="col-md-4">-->
+<!--                                    <div class="form-group">-->
+
+<!--                                    </div>-->
+<!--                                </div>-->
+                          </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
