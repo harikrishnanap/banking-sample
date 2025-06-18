@@ -60,16 +60,16 @@ A sample banking web application built using **Django**. This project simulates 
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/bank-home1.png)
+![Home Page](banking/screenshots/bank-home1.png)
 
-### 🏠 Register Page
-![Register Page](screenshots/bank-register.png)
+###  Register Page
+![Register Page](banking/screenshots/bank-register.png)
 
-### 🏠 Register Page
-![Login Page](screenshots/bank-login.png)
+###  Login Page
+![Login Page](banking/screenshots/bank-login.png)
 
-### 🏠 Register Page
-![Application Page](screenshots/bank-application.png)
+###  Application Page
+![Application Page](banking/screenshots/bank-application.png)
 
 ---
 
