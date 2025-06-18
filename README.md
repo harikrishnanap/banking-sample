@@ -32,7 +32,7 @@ A sample banking web application built using **Django**. This project simulates 
 2. **Create and activate a virtual environment**
    ```bash
    python -m venv env
-   source env/bin/activate  # Windows: env\Scripts\activate
+   env\Scripts\activate
 
 
 3. **Install dependencies**
@@ -55,7 +55,7 @@ A sample banking web application built using **Django**. This project simulates 
 
 ---
 ### 🚀 Live Demo
-  - **🟢 [banking-sample is live here](https://bankingsamp.pythonanywhere.com/)**
+  - **➡️ [View Banking Sample on PythonAnywhere](https://bankingsamp.pythonanywhere.com/)**
 ---
 ## 📸 Screenshots
 
@@ -92,9 +92,9 @@ banking-sample/
 ## 📞 Contact
 
 **Harikrishnan AP**
-- GitHub: [@harikrishnanap](https://github.com/harikrishnanap)
-- Email: harihaphari11@gmail.com
-- LinkedIn: []
+- GitHub&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;[@harikrishnanap](https://github.com/harikrishnanap)
+- Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;harihaphari11@gmail.com
+- LinkedIn&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;[Harikrishnan A P](https://www.linkedin.com/in/harikrishnan-a-p/)
 ---
 
 **⚠️ Important Note**: This is a sample application for educational and demonstration purposes. It should not be used in production without proper security audits and compliance with financial regulations.
