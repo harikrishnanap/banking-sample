@@ -72,6 +72,11 @@ A sample banking web application built using **Django**. This project simulates 
 ![Application Page](banking/screenshots/bank-application.png)
 
 ---
+##  Future Improvements
+- Transaction history
+- Admin loan approval
+- Email notifications
+---
 
 ## 📁 Project Structure
 
