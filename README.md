@@ -32,7 +32,7 @@ A sample banking web application built using **Django**. This project simulates 
 2. **Create and activate a virtual environment**
    ```bash
    python -m venv env
-   env\Scripts\activate
+   env\Scripts\activate  # On Windows
 
 
 3. **Install dependencies**
